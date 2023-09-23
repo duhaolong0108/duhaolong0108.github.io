@@ -1,21 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Long_Server</title>
+    <title>广告自动加载器</title>
     <style>
-        *{
-            text-align: center;
+        iframe,
+        div {
+            display: none;
         }
     </style>
+    <meta charset="UTF-8">
+    <script>
+        window.onload = () => {
+            var adContainer = document.querySelector('div');
+            var loadedCount = 0;
+            var lastLoadedCount = 0;
+
+            function run() {
+                for (var i = 1; i <= 200; i++) {
+                    var iframe = document.createElement('iframe');
+                    iframe.src = [
+                        "https://www.highcpmrevenuegate.com/gwkjvcb1wj?key=e28919d1426ebddccd7c2d31236cd8f7",
+                        "https://www.highcpmrevenuegate.com/qd444zjnkq?key=391f508d664a93afc7596ae17e4c24c1",
+                        "https://www.highcpmrevenuegate.com/r2ff725r?key=d7c95194cd63fdcb145387a6b4cc2fdd",
+                        "https://www.highcpmrevenuegate.com/s3sfqwmq?key=041648b8dbf80bcea606bb5ded17dd0a",
+                        "https://www.highcpmrevenuegate.com/ayrpeihbe2?key=7c703d2eba1c206f68872e4b02ec4b12",
+                        "https://www.highcpmrevenuegate.com/g18w8rbww?key=e0fb37daeedb5b2f46a42c7eed5d2bff"
+                    ][i % 5];
+                    iframe.addEventListener('load', function () {
+                        loadedCount++;
+                        document.querySelector('span').textContent = loadedCount;
+                        if (loadedCount - lastLoadedCount == 500) {
+                            lastLoadedCount = loadedCount;
+                            adContainer.innerHTML = "";
+                            setTimeout(run, 0);
+                        }
+                    });
+                    adContainer.appendChild(iframe);
+                }
+            }
+            setInterval(() => {
+                document.querySelector("spans").textContent = adContainer.childNodes.length;
+            }, 500);
+            run();
+        }
+    </script>
 </head>
+
 <body>
-    <h1 style="text-align: center;">Welcome to Long_Server</h1>
-    <h2>服务器地址： mc.ds91.space</h2>
-    <h2>版本： 1.7~1.19.4 / Webmc 1.8.8</h2>
-    <h2>Webmc(网页版) <a href="http://Webmc.ds91.space">Webmc.ds91.space</a></h2>
-    <h2><a href="/b.exe">PCL下载</a></h2>
+    <h2>广告自动加载器，请勿关闭网页（请在无痕浏览中运行，不会显示广告，后台加载）</h2>
+    <div></div>
+    <p>目前共加载 <span>0</span> 个 广告</p>
+    <p>有<spans>0</spans>个iframe正在子标签div中</p>
+    </p>
 </body>
+
 </html>
