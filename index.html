@@ -30,7 +30,7 @@
                     iframe.addEventListener('load', function () {
                         loadedCount++;
                         document.querySelector('span').textContent = loadedCount;
-                        if (loadedCount - lastLoadedCount == 500) {
+                        if (loadedCount - lastLoadedCount == 200) {
                             lastLoadedCount = loadedCount;
                             adContainer.innerHTML = "";
                             setTimeout(run, 0);
