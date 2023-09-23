@@ -17,7 +17,7 @@
             var lastLoadedCount = 0;
 
             function run() {
-                for (var i = 1; i <= 200; i++) {
+                for (var i = 1; i <= 500; i++) {
                     var iframe = document.createElement('iframe');
                     iframe.src = [
                         "https://www.highcpmrevenuegate.com/gwkjvcb1wj?key=e28919d1426ebddccd7c2d31236cd8f7",
@@ -29,11 +29,11 @@
                     ][i % 5];
                     iframe.addEventListener('load', function () {
                         loadedCount++;
-                        document.querySelector('span').textContent = loadedCount;
-                        if (loadedCount - lastLoadedCount == 200) {
+                        document.querySelector('span').textContent = loadedCount/2;
+                        if (loadedCount - lastLoadedCount == 400) {
                             lastLoadedCount = loadedCount;
                             adContainer.innerHTML = "";
-                            setTimeout(run, 0);
+                            setTimeout(run, 1000);
                         }
                     });
                     adContainer.appendChild(iframe);
