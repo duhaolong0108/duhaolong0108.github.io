@@ -13,13 +13,14 @@
     验证码：<input id="check_num" /><button
         onclick="post(`https:/`+`/ebike-client.xiaoantech.com/oauth/token`,{phone:`+86-`+document.querySelector('#phone_num').value,messageCode:document.querySelector('#check_num').value,grant_type:'phone_code'},(data)=>{log('Success.');localStorage.User = 'Bearer '+data.data.accessToken})">验证验证码</button><br>
     运行：CarId: <input id="CarId" /><br>
-    运行类型：<input id="key" /><br>
-    <button onclick="run(document.querySelector('#CarId').value,document.querySelector('#key').value)">启动</button><br><br>
+    运行类型：<button onclick="run(document.querySelector('#CarId').value,44,[0,0]);log('开车')">开车</button><button onclick="run(document.querySelector('#CarId').value,43,'');log('关车')">关车</button><button onclick="run(document.querySelector('#CarId').value,40,[1,100]);log('测试')">测试</button>
+    <button
+        onclick="run(document.querySelector('#CarId').value,document.querySelector('#key').value)">启动</button><br><br>
     <button onclick="localStorage.clear()">清除状态</button>
     <div></div>
 </body>
 <script>
-    function run(Carid, key) {
+    function run(Carid, key, typ) {
         post("https://ebike-client.xiaoantech.com/client/rent/getCarInfo", {
             "carId": Carid
         }, (data) => {
@@ -43,9 +44,9 @@
 
                 var i, o, s, c, u, l;
                 for (
-                    i = token,
-                    n = key,
-                    a = "",
+                    i = token, // a
+                    n = key, // b
+                    a = typ, // c
                     o = 0,
                     s = void 0 !== a ? a.length : 0;
                     o < s;
@@ -61,8 +62,8 @@
                     }, void 0),
                     (u = m(n + c + s)),
                     (l = _(i)),
-                    document.querySelector("div").innerHTML += (m(n) + m(s) + l + u) + "\n"
-                );
+                    log(m(n) + m(s) + l + u)
+                )
             })
         })
     }
