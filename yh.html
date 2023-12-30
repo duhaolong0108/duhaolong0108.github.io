@@ -9,9 +9,9 @@
 
 <body>
     电话号码：<input id="phone_num" value="15815949964" /><button
-        onclick="post(`https:/`+`/ebike-client.xiaoantech.com/client/code/send`,{phone:`+86-`+document.querySelector('#phone_num').value,scene:1},()=>{log('Success.')})">获取验证码</button><br>
+        onclick="post(`https:/`+`/ebike-client-prod2.xiaoantech.com/client/code/send`,{phone:`+86-`+document.querySelector('#phone_num').value,scene:1},()=>{log('Success.')})">获取验证码</button><br>
     验证码：<input id="check_num" /><button
-        onclick="post(`https:/`+`/ebike-client.xiaoantech.com/oauth/token`,{phone:`+86-`+document.querySelector('#phone_num').value,messageCode:document.querySelector('#check_num').value,grant_type:'phone_code'},(data)=>{log('Success.');localStorage.User = 'Bearer '+data.data.accessToken})">验证验证码</button><br>
+        onclick="post(`https:/`+`/ebike-client-prod2.xiaoantech.com/oauth/token`,{phone:`+86-`+document.querySelector('#phone_num').value,messageCode:document.querySelector('#check_num').value,grant_type:'phone_code'},(data)=>{log('Success.');localStorage.User = 'Bearer '+data.data.accessToken})">验证验证码</button><br>
     运行：CarId: <input id="CarId" /><br>
     运行类型：<button onclick="run(document.querySelector('#CarId').value,44,[0,0]);log('开车')">开车</button><button onclick="run(document.querySelector('#CarId').value,43,'');log('关车')">关车</button><button onclick="run(document.querySelector('#CarId').value,40,[1,100]);log('测试')">测试</button>
     <button
@@ -69,7 +69,7 @@
     }
     localStorage.User = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaW4iOiJhXzJkMGU1MTFhNjcwMDk3OCIsInVzZXJfbmFtZSI6ImFfMmQwZTUxMWE2NzAwOTc4Iiwib3BlbmlkIjpudWxsLCJzY29wZSI6WyJhbGwiXSwibmlja25hbWUiOm51bGwsImF2YXRhciI6bnVsbCwiZXhwIjoxNzA2MzM4NzIzLCJkZXZpY2VJZCI6IjE3MDM5MTY3MzMwMzczNjczMTAiLCJhdXRob3JpdGllcyI6WyJOT1JNQUwiXSwianRpIjoiN2M2NTMxYzctYTM0Yi00NzI0LWIwZWMtOGYyODQ0NGFlMjU5IiwicGxhdGZvcm0iOiJ3ZWNoYXQiLCJjbGllbnRfaWQiOiI2NTEifQ.zN9ojbxs3jk7Ly07XHNX_ZKrxKk8aUglJgNIlHYxY10"
     function log(data) {
-        document.querySelector("div").innerText += "[" + Date() + "]" +data + "\n"
+        document.querySelector("div").innerText += "[" + Date() + "] " +data + "\n"
     }
     function SHA256(s) {
         var chrsz = 8;
