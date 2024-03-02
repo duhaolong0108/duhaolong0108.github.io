@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    电话号码：<input id="phone_num" value="15815949964" /><button
+    0电话号码：<input id="phone_num" value="15815949964" /><button
         onclick="post(`https:/`+`/ebike-client-prod2.xiaoantech.com/client/code/send`,{phone:`+86-`+document.querySelector('#phone_num').value,scene:1},()=>{log('Success.')})">
         获取验证码</button><br />
     验证码：<input id="check_num" /><button
