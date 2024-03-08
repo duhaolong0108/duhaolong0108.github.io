@@ -23,96 +23,8 @@
     </button>
     <button onclick="run(document.querySelector('#CarId').value,40,[255])">
         发声音</button><br /><br />
-    <button onclick="localStorage.clear()">清除状态</button>
-    <p>BLE_IDX_CONFIG: { START: 3, TEMP_LOCK: 7, LOCK: 1 },<br>
-        BLE_CMD_CONFIG: {
-        PLAY_VOICE: 40,
-        GET_DEVICE_INFO: 65,
-        START: 44,
-        LOCK: 43,
-        GET_LAST_BEACON_INFO: 66,
-        GET_RFID: 84,
-        SET_DASHBOARD: 106,
-        },</p>
-    <p>
-        00："嘟"（小声）
-        <br>
-        01："已还车，请检查车筐，带好随身物品，期待我们再次相见"
-        <br>
-        02："开锁成功"
-        <br>
-        03："开始启动，请注意骑行安全哟"
-        <br>
-        04："登登登登"（大声）
-        <br>
-        05："欢迎使用共享电单车"
-        <br>
-        06：（警告声）【像动电单车的警告声】
-        <br>
-        07："临时锁车，等你回来哟"
-        <br>
-        08："服务区外暂时无法启动，请回到服务区内骑行"
-        <br>
-        09："我在这里"
-        <br>
-        0A："正在服务器边缘，超出服务区我会断电哟"
-        <br>
-        0B："这里禁止骑行，我断电了开启锁供电"
-        <br>
-        0C："还车归还失败，再试一次吧"
-        <br>
-        0D："还车失败，请垂直于停车线还车"
-        <br>
-        0F："超速啦，请减速注意安全"
-        <br>
-        10："我受伤了，请换一辆试试"
-        <br>
-        11："我没电了，请换一辆试试"
-        <br>
-        12："我已经被使用了，请让一让吧"
-        <br>
-        13："邻近服务区，车辆即将断电"
-        <br>
-        15："电池仓锁打开"
-        <br>
-        18：（扒拉~）[鬼知道什么声音]
-        <br>
-        1B："太好了，可以还车了"
-        <br>
-        1C："车辆即将断电，请佩戴好头盔"*2
-        <br>
-        1D："交警提醒您，请佩戴头盔，文明骑行"
-        <br>
-        1E："hey，我是...，请不要多人骑行哟"
-        <br>
-        1F："车辆已超载，即将断电"
-        <br>
-        21："我跌倒了，你可以扶我起来吗"
-        <br>
-        23："登录失败，再试一次吧"
-        <br>
-        24："头盔已佩戴，恢复骑行"
-        <br>
-        25："我已恢复正常，我们继续出发吧"
-        <br>
-        26："遵守交规，不要逆道而行哟"
-        <br>
-        27："对准还车标志线，再确认还车"
-        <br>
-        36: "电池仓锁打开"
-        <br>
-        37："为保障骑行安全，我断电了"
-        <br>
-        38："电门先关了，冷静下来再骑吧"
-        <br>
-        39: "电门已恢复，可以带我骑行了"
-        <br>
-        3A："车辆已过载，我断电了"
-        <br>
-        3B："请按压头盔，谢谢配合"
-        <br>
-        3C："不要乱开电门喔"
-    </p>
+    <button onclick="localStorage.User = 'Basic NjUxOnhpYW9hbnRlY2g='">清除状态</button>
+   
     <div></div>
 
     <script>
@@ -172,7 +84,7 @@
             );
         }
         localStorage.User =
-            "Basic MTE3NDp4aWFvYW50ZWNo";
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaW4iOiJhXzJlNDBkNTM4MmQ4MTQzYSIsInVzZXJfbmFtZSI6ImFfMmU0MGQ1MzgyZDgxNDNhIiwib3BlbmlkIjoib1hjSHI1VF9oTzZBb1VPS3FVSm9DbXJObE1LTSIsInNjb3BlIjpbImFsbCJdLCJuaWNrbmFtZSI6IuWImOacneiDvSIsImF2YXRhciI6IiIsImV4cCI6MTcxMjMyNzI1MSwiZGV2aWNlSWQiOiIxNzA5OTA4MDIzNTQ0ODc2Njk0NSIsImF1dGhvcml0aWVzIjpbIk5PUk1BTCJdLCJqdGkiOiI2YWZhZTRhYS1jNTRhLTQyMWEtODc4MC1mZDJjMDk0ZmE2N2YiLCJwbGF0Zm9ybSI6IndlY2hhdCIsImNsaWVudF9pZCI6IjY1MSJ9.mLe1jpCQV9t8g8GnitOQDSVZ3pHWgnHLAHz5-i4o040";
         function log(data) {
             document.querySelector("div").innerText +=
                 "[" + Date() + "] " + data + "\n";
