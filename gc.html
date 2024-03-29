@@ -23,8 +23,8 @@
     </button>
     <button onclick="run(document.querySelector('#CarId').value,40,[255])">
         发声音</button><br /><br />
-    <button onclick="localStorage.User = 'Basic NjUxOnhpYW9hbnRlY2g='">清除状态</button>
-   
+    <button onclick="localStorage.User = 'Basic NjQ0OnhpYW9hbnRlY2g='">清除状态</button>
+
     <div></div>
 
     <script>
@@ -58,9 +58,9 @@
 
                             var i, o, s, c, u, l;
                             for (
-                                i = token, 
-                                n = key, 
-                                a = typ, 
+                                i = token,
+                                n = key,
+                                a = typ,
                                 o = 0,
                                 s = void 0 !== a ? a.length : 0;
                                 o < s;
@@ -83,7 +83,7 @@
                 }
             );
         }
-        localStorage.User ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaW4iOiJhXzJkY2RjNjIwMjMwMTM3MSIsInVzZXJfbmFtZSI6ImFfMmRjZGM2MjAyMzAxMzcxIiwib3BlbmlkIjoib3VMRTA1V3RTUHNMUk1qUXEyNk9VeGtMQ0RrOCIsInNjb3BlIjpbImFsbCJdLCJuaWNrbmFtZSI6IuWPtua2myIsImF2YXRhciI6IiIsImV4cCI6MTcxMjg0NjkzOCwiZGV2aWNlSWQiOiIxNzEwNDI3NjIyNzQ1MzQ4NDk0OSIsImF1dGhvcml0aWVzIjpbIk5PUk1BTCJdLCJqdGkiOiI0NjgwNDExZi02OGRlLTQzNWYtYTdhZC0zMjI3MGVkMjNmODAiLCJwbGF0Zm9ybSI6IndlY2hhdCIsImNsaWVudF9pZCI6IjY0NCJ9.q9lSszh5Cx8CfO4MyUFT1VoqurbEfIT_92jl5pd2nTw";
+        localStorage.User = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaW4iOiJhXzMwYzY4MzQ5MGE4MjEzMSIsInVzZXJfbmFtZSI6ImFfMzBjNjgzNDkwYTgyMTMxIiwib3BlbmlkIjpudWxsLCJzY29wZSI6WyJhbGwiXSwibmlja25hbWUiOm51bGwsImF2YXRhciI6bnVsbCwiZXhwIjoxNzE0MTM5MTEzLCJkZXZpY2VJZCI6bnVsbCwiYXV0aG9yaXRpZXMiOlsiTk9STUFMIl0sImp0aSI6ImMyNmU5NzRiLTUxYzItNGNlMS1hYzNjLTM5NTJhMGU5OTM0ZCIsInBsYXRmb3JtIjpudWxsLCJjbGllbnRfaWQiOiI2NDQifQ.URXDPUCxWVrPQDCq6l2ZctR3BKwPv0-SW2AEjfKUC7A";
         function log(data) {
             document.querySelector("div").innerText +=
                 "[" + Date() + "] " + data + "\n";
@@ -306,6 +306,7 @@
                 ...{
                     traceId: time + "" + Math.floor(Math.random() * 1e11),
                     tenantId: "644",
+                    scene:1
                 },
                 ...body,
             };
