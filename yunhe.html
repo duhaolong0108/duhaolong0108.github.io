@@ -94,9 +94,24 @@
     <input> <button
         onclick="document.querySelector('div').innerHTML = c(document.querySelector('input').value)">RUN</button><br>
 
-    "open" "03 00 02 01 00"<br>
-    "close" "03 00 01 01 01"<br>
-    "helmet" "03 00 14 01 01"
+    <br>unlock: 6774008282
+<br>lock: 6774008181
+<br>open_dc: 6774008989
+<br>close_dc: 
+<br>修改设备工作模式_00 677401860086
+<br>修改设备工作模式_01 677401860178 
+<br>修改设备工作模式_02 6774018602fc
+<br>修改设备工作模式_03 677401860379
+<br>修改设备工作模式_04 6774018604fb
+<br>修改设备工作模式_05 677401860578
+<br>修改设备工作模式_ff 67740186ffff
+<br>
+<br>if ("open-lock" === i) l = "03 00 02 01 00";
+<br>else if ("close-lock" === i) l = "03 00 01 01 01";
+<br>else if ("open-battery" === i) l = "03 00 05 01 01";
+<br>else if ("close-battery" === i) l = "03 00 05 01 00";
+<br>else if ("beep" === i) l = "03 00 04 01 01";
+<br>else if ("locate" === i) l = "03 00 01 01 01";
     <div></div>
 </body>
 
