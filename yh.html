@@ -10,10 +10,10 @@
 
 <body>
     电话号码：<input id="phone_num" value="15815949964" /><button
-        onclick="post(`https:/`+`/ebike-client-prod2.xiaoantech.com/client/code/send`,{phone:`+86-`+document.querySelector('#phone_num').value,scene:1},()=>{log('Success.')})">
+        onclick="post(`https:/`+`/ebike-client.xiaoantech.com/client/code/send`,{phone:`+86-`+document.querySelector('#phone_num').value,scene:1},()=>{log('Success.')})">
         获取验证码</button><br />
     验证码：<input id="check_num" /><button
-        onclick="post(`https:/`+`/ebike-client-prod2.xiaoantech.com/oauth/token`,{phone:`+86-`+document.querySelector('#phone_num').value,messageCode:document.querySelector('#check_num').value,grant_type:'phone_code'},(data)=>{log('Success.');localStorage.User = 'Bearer '+data.data.accessToken})">
+        onclick="post(`https:/`+`/ebike-client.xiaoantech.com/oauth/token`,{phone:`+86-`+document.querySelector('#phone_num').value,messageCode:document.querySelector('#check_num').value,grant_type:'phone_code'},(data)=>{log('Success.');localStorage.User = 'Bearer '+data.data.accessToken})">
         验证验证码</button><br />
     运行：CarId: <input id="CarId" /><br />
     Key: <input id="key" /><br />
@@ -30,13 +30,13 @@
     <script>
         function run(Carid, key, typ) {
             post(
-                "https://ebike-client-prod2.xiaoantech.com/client/rent/getCarInfo",
+                "https://ebike-client.xiaoantech.com/client/rent/getCarInfo",
                 {
                     carId: Carid,
                 },
                 (data) => {
                     post(
-                        "https://ebike-client-prod2.xiaoantech.com/client/paas/device/getBlueToothToken",
+                        "https://ebike-client.xiaoantech.com/client/paas/device/getBlueToothToken",
                         {
                             imei: data.data.imei,
                         },
@@ -84,7 +84,7 @@
             );
         }
         localStorage.User =
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaW4iOiJhXzMyM2Y1NWI5OTEwMDkwZiIsInVzZXJfbmFtZSI6ImFfMzIzZjU1Yjk5MTAwOTBmIiwib3BlbmlkIjpudWxsLCJzY29wZSI6WyJhbGwiXSwibmlja25hbWUiOm51bGwsImF2YXRhciI6bnVsbCwiZXhwIjoxNzE3MjI2MDM5LCJkZXZpY2VJZCI6bnVsbCwiYXV0aG9yaXRpZXMiOlsiTk9STUFMIl0sImp0aSI6IjhlZDNiMjk3LWQyNjAtNGJhYi1iYWEwLTkwNzU0NDg2NjA3YiIsInBsYXRmb3JtIjpudWxsLCJjbGllbnRfaWQiOiI2NTEifQ.rsFON2ORNKZOaeQJQdWZKVYoqA5SKvBtCqCVPFF1Ees";
+            "Basic NjUxOnhpYW9hbnRlY2g=";
         function log(data) {
             document.querySelector("div").innerText +=
                 "[" + Date() + "] " + data + "\n";
