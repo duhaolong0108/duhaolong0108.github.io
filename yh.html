@@ -23,8 +23,8 @@
     </button>
     <button onclick="run(document.querySelector('#CarId').value,40,[255])">
         发声音</button><br /><br />
-    <button onclick="localStorage.User = 'Basic NjUxOnhpYW9hbnRlY2g='">清除状态</button>
-   
+    <button onclick="localStorage.User = 'Basic NjQ0OnhpYW9hbnRlY2g='">清除状态</button>
+
     <div></div>
 
     <script>
@@ -58,9 +58,9 @@
 
                             var i, o, s, c, u, l;
                             for (
-                                i = token, 
-                                n = key, 
-                                a = typ, 
+                                i = token,
+                                n = key,
+                                a = typ,
                                 o = 0,
                                 s = void 0 !== a ? a.length : 0;
                                 o < s;
@@ -83,8 +83,7 @@
                 }
             );
         }
-        localStorage.User =
-            "Basic NjUxOnhpYW9hbnRlY2g=";
+        localStorage.User = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaW4iOiJhXzMyZGJkM2UxODA4MTkyNCIsInVzZXJfbmFtZSI6ImFfMzJkYmQzZTE4MDgxOTI0Iiwib3BlbmlkIjoib3VMRTA1V3RTUHNMUk1qUXEyNk9VeGtMQ0RrOCIsInNjb3BlIjpbImFsbCJdLCJuaWNrbmFtZSI6IuWRqOmhuuWIqSIsImF2YXRhciI6IiIsImV4cCI6MTcxODUxMTk2NywiZGV2aWNlSWQiOiIxNzExNzE5NDExNDM3NjAwMDEyMSIsImF1dGhvcml0aWVzIjpbIk5PUk1BTCJdLCJqdGkiOiI4MjdmN2E3Zi1mZDk3LTQzMzUtOThlNy05MGIyZjIzMTJlYjMiLCJwbGF0Zm9ybSI6IndlY2hhdCIsImNsaWVudF9pZCI6IjY0NCJ9.lRN3v4QOF_xcylB5r84BOff4k3507biYvgMpGDpMM-g";
         function log(data) {
             document.querySelector("div").innerText +=
                 "[" + Date() + "] " + data + "\n";
@@ -307,6 +306,7 @@
                 ...{
                     traceId: time + "" + Math.floor(Math.random() * 1e11),
                     tenantId: "1102",
+                    scene: 1
                 },
                 ...body,
             };
@@ -332,21 +332,6 @@
                 } else console.log(url, data);
             };
             httpRequest.send(JSON.stringify(send));
-        }
-        function first(t, n, a) {
-            for (i = e.sent, o = 0, s = void 0 !== a ? a.length : 0; o < s;)
-                i.push(a[o++]);
-            return (
-                (s = i.length),
-                (c = 0),
-                s > 0 &&
-                i.forEach(function (e) {
-                    c += e;
-                }, void 0),
-                (u = m(n + c + s)),
-                (l = _(i)),
-                m(n) + m(s) + l + u
-            );
         }
     </script>
 </body>
